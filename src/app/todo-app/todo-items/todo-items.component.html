@@ -1,0 +1,11 @@
+<ul>
+    <li *ngFor="let item of getTodoList()">
+        <label htmlFor="chk_{{item.id}}" [ngClass]="{'done' : item.done}">     
+       <input id="chk_{{item.id}}" type="checkbox" [checked]="item.done" (click)="itemClick(item)"> {{ item.value }} 
+    </label> |
+        <a href="#" (click)="delete(item)">刪除</a>
+        <span>{{ item.done | todoDone }}</span>
+    </li>
+</ul>
+<hr>
+<p class="font-style"><small>Thank you for your use.</small></p>
